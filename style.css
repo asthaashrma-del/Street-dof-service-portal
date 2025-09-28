@@ -1,0 +1,587 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    overflow-x: hidden; /* Prevents horizontal scroll, but allows vertical scrolling */
+    overflow-y: auto; /* Enables vertical scrolling */
+    position: relative;
+}
+
+
+
+/* 🌟 Background Image Slider */
+.slider {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.slider img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.slider img.active {
+    opacity: 1;
+}
+
+
+
+/* 🌟 Header */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    padding: 15px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 69, 0, 0.8);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+}
+
+.logo {
+    color: white;
+    font-size: 1.8em;
+    font-weight: 600;
+}
+
+.navigation a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    margin-left: 20px;
+}
+
+.btnlogin-popup {
+    padding: 10px 20px;
+    background: #ffd700;
+    color: #000;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* 🌟 Hero Section */
+.hero {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    width: 70%;
+    max-width: 700px;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    /* background: rgba(0, 0, 0, 0.6); */
+    padding: 20px;
+    border-radius: 90px;
+    margin-top: 25%;
+}
+
+.hero h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    margin-top: 30px;
+    /* text-decoration: underline; */
+    text-decoration-color: bisque;
+    color: oldlace;
+}
+
+.hero p {
+    font-size: 1.2em;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.cta-button {
+    padding: 12px 25px;
+    font-size: 1.2em;
+    background: #ffd700;
+    color: black;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cta-button:hover {
+    background: white;
+    transform: scale(1.1);
+}
+
+/* 🌟 Auth Pages (Login & Register) */
+.auth-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('https://placedog.net/1200/700?id=5') no-repeat center center;
+    background-size: cover;
+}
+
+.auth-container {
+    background: rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.auth-container h2 {
+    margin-bottom: 20px;
+    font-size: 2em;
+}
+
+.input-box {
+    position: relative;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.input-box input {
+    width: 100%;
+    padding: 12px;
+    background: transparent; /* ✅ Makes background clear */
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 1em;
+    color: white;
+    outline: none;
+}
+
+    .input-box label {
+        position: absolute;
+        left: 12px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1em;
+        color:#ccc;
+        transition: 0.3s ease-in-out;
+        pointer-events: none;
+    }
+
+.btn {
+    padding: 10px 20px;
+    background: #ff4500;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #ff6347;
+}
+/* 🌟 Move label above input field when typing */
+.input-box input:focus ~ label,
+.input-box input:not(:placeholder-shown) ~ label {
+    top: -12px;
+    left: 10px;
+    font-size: 0.85em;
+    color: #ff4500;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 2px 5px;
+    border-radius: 5px;
+}
+.input-box input::placeholder {
+    color: transparent;
+}
+/* 🌟 Full-Page Slider */
+.slider-container {
+    width: 100%;
+    height: 90vh;
+    overflow: hidden;
+}
+
+.slider {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slider img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.slider img.active {
+    opacity: 1;
+}
+
+/* 🌟 Welcome Section */
+.welcome {
+    text-align: center;
+    padding: 60px;
+    background: #ff4500;
+    color: white;
+}
+
+.welcome h1 {
+    font-size: 2.5rem;
+}
+
+.welcome p {
+    font-size: 1.3rem;
+}
+
+/* 🌟 Dogs Gallery */
+.dogs-gallery {
+    text-align: center;
+    padding: 40px;
+    background: white;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.gallery-grid img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* 🌟 Footer */
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 40px;
+}
+
+.footer-content h2 {
+    font-size: 1.8rem;
+}
+
+.donate-button {
+    padding: 12px 25px;
+    background: #ff4500;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.footer-links a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+}
+
+.social-links img {
+    width: 30px;
+    margin: 10px;
+}
+/* 🌟 Recent Adoptions */
+.adoptions {
+    text-align: center;
+    padding: 40px;
+    background: white;
+}
+
+.adoption-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.dog-card {
+    background: #ffefdb;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.1);
+}
+
+.dog-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* 🌟 Testimonials Section */
+.testimonials {
+    text-align: center;
+    padding: 40px;
+    background: #f5f5f5;
+}
+
+.testimonial {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.1);
+    margin: 20px;
+}
+
+.testimonial p {
+    font-size: 1.2rem;
+}
+
+.testimonial h4 {
+    color: #ff4500;
+}
+
+/* 🌟 Statistics Section */
+.statistics {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+    background: #f8f9fa;
+}
+
+.stat-box {
+    background: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.1);
+}
+
+.stat-box h2 {
+    color: #ff4500;
+    font-size: 2rem;
+}
+.slider {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.slider img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.slider img.active {
+    opacity: 1;
+}
+.team-card img {
+    width: 150px;  /* Set a fixed width */
+    height: 150px; /* Set a fixed height */
+    object-fit: cover; /* Ensures the image fits nicely */
+    border-radius: 50%; /* Makes it circular */
+    border: 3px solid #ff4500; /* Optional: Add a border */
+}
+
+.about-content {
+    text-align: center;
+    padding: 50px;
+    background: #fff;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.about-content h2 {
+    color: #ff4500;
+    font-size: 2rem;
+}
+
+.about-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.about-content ul li {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+/* 🌟 Meet Our Team */
+.team-section {
+    text-align: center;
+    padding: 50px;
+    background: #f9f9f9;
+}
+
+.team-members {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.team-card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    width: 200px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.team-card h3 {
+    font-size: 1.4rem;
+    color: #ff4500;
+}
+
+/* 🌟 Call to Action */
+.cta-section {
+    text-align: center;
+    padding: 50px;
+    background: #ff4500;
+    color: white;
+}
+
+.cta-button {
+    background: white;
+    color: #ff4500;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    text-decoration: none;
+}
+
+.cta-button:hover {
+    background: #fff3cd;
+}
+
+/* 🌟 Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: black;
+    color: white;
+}
+/* 🌟 About Page Background */
+.about-section {
+    background: url('https://source.unsplash.com/1600x900/?dog,rescue')  no-repeat center center/cover; /* Replace with your actual image */
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+/* 🌟 Dark Overlay for Better Readability */
+.about-section .overlay {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 50px;
+    border-radius: 10px;
+}
+
+.about-section h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+}
+
+.about-section p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: auto;
+    line-height: 1.6;
+}
+
+
+
+
+
+/* 🌟 Filter Section */
+.filter-section {
+    background: #fff5f0;
+    padding: 30px;
+    margin: 40px auto;
+    border-radius: 12px;
+    max-width: 800px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.filter-section h2 {
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    color: #ff4500;
+}
+
+.filter select {
+    padding: 10px 15px;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 6px;
+    margin-right: 10px;
+}
+
+.filter button {
+    padding: 10px 20px;
+    background-color: #ff4500;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+.filter button:hover {
+    background-color: #ff6347;
+}
+
+
+/* 🌟 Gallery Section */
+.dogs-gallery {
+    background: #fff;
+    padding: 20px;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.dog-card {
+    background: #ffefdb;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0px 5px 10px rgba(0,0,0,0.1);
+}
+
+.dog-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+
+

@@ -1,0 +1,7 @@
+{
+  "USA": ["New York", "California", "Texas"],
+  "India": ["Bangalore", "Delhi", "Mumbai"],
+  "UK": ["London", "Manchester"],
+  "Germany": ["Berlin", "Munich"],
+  "Japan": ["Tokyo", "Osaka"]
+}
